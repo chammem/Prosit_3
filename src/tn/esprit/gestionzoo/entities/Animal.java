@@ -1,3 +1,5 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Animal {
     String family;
     String name;
@@ -12,4 +14,17 @@ public class Animal {
     public String toString() {
         return "Family: " + family + ", Name: " + name + ", age " + age + ", isMammal " +isMammal;
     }
-   }
+
+
+
+        public void setage(int age) {
+          if (age<0)
+            System.out.println("l'age est négative");
+          else
+              this.age = age;
+
+        }
+
+    }
+
+
