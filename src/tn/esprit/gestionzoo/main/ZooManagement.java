@@ -1,51 +1,57 @@
 package tn.esprit.gestionzoo.main;
 
-import java.util.Scanner;
 import tn.esprit.gestionzoo.entities.*;
+
 public class ZooManagement {
 
     public static void main(String[] args) {
+        Animal lion = new Animal();
+        lion.setName("Simba");
+        lion.setAge(8);
+        lion.setFamily("Cats");
+        lion.setMammal(true);
 
-        Scanner scanner = new Scanner(System.in);
+        Zoo myZoo = new Zoo("Wildlife Park", "Ariana");
+        Zoo notMyZoo = new Zoo("WaterPark", "Siliana");
 
-        System.out.println("Veuillez entrer le nombre de cages : ");
-        int nbrCages =scanner.nextInt();
-
-        scanner.nextLine();
-
-        System.out.println("Veuillez entrer le nom de zoo : ");
-        String zooName =scanner.nextLine();
-
-        System.out.println(zooName + " comporte " + nbrCages + " cages");
-
-        Animal lion = new Animal("Simba","Cats",8, true);
 
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
 
-        Animal dog2 = new Animal("Canine", "Snoopy", 2, true);
-
-        Zoo myZoo = new Zoo("Belvedere","Tunis");
-
-        Zoo notMyZoo = new Zoo("Park", "bizerte");
-
-
-        System.out.println(myZoo.toString());
 
         System.out.println(myZoo.addAnimal(lion));
         System.out.println(myZoo.addAnimal(dog));
 
-
         myZoo.displayAnimals();
 
         System.out.println(myZoo.searchAnimal(dog));
-
+        Animal dog2 = new Animal("Canine", "lll", 2, true);
         System.out.println(myZoo.searchAnimal(dog2));
 
-        System.out.println(myZoo.removeAnimal(dog));
+//           System.out.println(myZoo.removeAnimal(dog));
         myZoo.displayAnimals();
 
-        System.out.println(myZoo.isZooFull());
 
-        System.out.println(Zoo.comparerZoo(myZoo, notMyZoo));
+        System.out.println(myZoo);
+
+        myZoo.addAnimal(lion);
+        myZoo.addAnimal(dog);
+        myZoo.addAnimal(dog2);
+        myZoo.displayAnimals();
+
+
+        myZoo.setName("Belvedere Park");
+        Zoo notMyZoo1 = Zoo.comparerZoo(myZoo, notMyZoo);
+        System.out.println(notMyZoo1);
+
+        Aquatic aquatic = new Aquatic();
+        Dolphin dolphin = new Dolphin("mer",12);
+        Penguin penguin = new Penguin("mer",13);
+        Terrestrial terrestrial = new Terrestrial();
+        aquatic.swim();
+        dolphin.swim();
+        penguin.swim();
+
+
+
     }
 }
