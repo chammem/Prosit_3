@@ -3,8 +3,8 @@ package tn.esprit.gestionzoo.entities;
     public non-sealed class Aquatic extends Animal {
         private String habitat ;
 
-        public Aquatic(String habitat) {
-
+        public Aquatic(String family, String name, int age, boolean isMammal,String habitat) {
+            super(family, name, age,isMammal);
             this.habitat = habitat;
         }
         public Aquatic() {
@@ -12,15 +12,15 @@ package tn.esprit.gestionzoo.entities;
 
         }
 
+
         @Override
         public String toString() {
-            return super.toString()+"Aquatic{" +
-                    "habitat='" + habitat + '\'' +
-                    '}';
+            return super.toString()+
+                    "habitat='" + habitat ;
         }
 
         public void swim(){
-            System.out.println("This aquatic animal is swimming.");
+
         }
     }
 

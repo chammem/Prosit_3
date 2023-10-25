@@ -11,9 +11,8 @@ package tn.esprit.gestionzoo.entities;
 
         @Override
         public String toString() {
-            return super.toString()+"Terrestrial{" +
-                    "nbrLegs=" + nbrLegs +
-                    '}';
+            return super.toString() +
+                    "nbrLegs=" + nbrLegs ;
         }
 
         public Terrestrial() {

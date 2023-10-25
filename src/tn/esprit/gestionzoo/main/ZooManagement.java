@@ -44,12 +44,29 @@ public class ZooManagement {
         System.out.println(notMyZoo1);
 
         Aquatic aquatic = new Aquatic();
-        Dolphin dolphin = new Dolphin("mer",12);
-        Penguin penguin = new Penguin("mer",13);
-        Terrestrial terrestrial = new Terrestrial();
-        aquatic.swim();
+        Dolphin D = new Dolphin();
+        Dolphin dolphin = new Dolphin("dauphin","",3,true,"mer",12);
+
         dolphin.swim();
+        //Penguin P = new Penguin();
+        Aquatic aquatic1 = new Aquatic("aqua","acuatic1",3,true,"");
+        Penguin penguin = new Penguin("mer","",13,true,"",1);
+
+        aquatic.swim();
+
         penguin.swim();
+////////////////////////////////////////////////////
+
+        Animal aquatic5 = new Aquatic("aqua5","aquatic5",27,true,"");
+
+
+        myZoo.addAquaticAnimal(aquatic5);
+        myZoo.displayAquaticAnimals();
+
+
+        ((Aquatic)aquatic5).swim();
+
+
 
 
 

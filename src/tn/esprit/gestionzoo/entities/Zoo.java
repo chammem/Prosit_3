@@ -6,17 +6,65 @@ public class Zoo {
     private Animal[] animals;
     private String name, city;
     private int nbrAnimals;
+    private int nbrAquaticAnimals;
+    private Animal[] aquaticAnimals;
+
 
     public Zoo() {
     }
 
     public Zoo(String name, String city) {
         animals = new Animal[NUMBER_OF_CAGES];
+        aquaticAnimals = new Animal[10];
         this.name = name;
         this.city = city;
     }
 
-    public static Zoo comparerZoo(Zoo z1, Zoo z2) {
+    public boolean isAquaticAnimalsFull() {
+        return nbrAquaticAnimals == 10;
+    }
+    public int searchAquaticAnimal(Animal aquaticAnimal) {
+        int index = -1;
+        for (int i = 0; i < nbrAquaticAnimals; i++) {
+            if (aquaticAnimal.getName().equals(aquaticAnimals[i].getName()))
+                return i;
+        }
+        return index;
+    }
+    public void displayAquaticAnimals() {
+        System.out.println("List of aquatic animals of " + name + ":");
+        for (int i = 0; i < nbrAquaticAnimals; i++) {
+            System.out.println(aquaticAnimals[i]);
+        }
+    }
+    public int getNbrAquaticAnimals() {
+        return nbrAquaticAnimals;
+    }
+
+    public void setNbrAquaticAnimals(int nbrAquaticAnimals) {
+        this.nbrAquaticAnimals = nbrAquaticAnimals;
+    }
+
+    public Animal[] getAquaticAnimals() {
+        return aquaticAnimals;
+    }
+
+    public void setAquaticAnimals(Animal[] aquaticAnimals) {
+        this.aquaticAnimals = aquaticAnimals;
+    }
+
+
+
+    public void addAquaticAnimal(Animal aquaticAnimal) {
+        if (searchAquaticAnimal(aquaticAnimal) != -1)
+            return;
+        if (isAquaticAnimalsFull())
+            return;
+        aquaticAnimals[nbrAquaticAnimals] = aquaticAnimal;
+        nbrAquaticAnimals++;
+    }
+
+        public static Zoo comparerZoo(Zoo z1, Zoo z2) {
         if (z1.nbrAnimals > z2.nbrAnimals)
             return z1;
         return z2;
